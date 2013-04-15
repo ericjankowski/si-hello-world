@@ -7,9 +7,10 @@
 		http://www.springframework.org/schema/integration
 		http://www.springframework.org/schema/integration/spring-integration.xsd"> 
 	
-	<gateway id="helloGateway" service-interface="com.erj.practice.helloworld.gateway.HelloService" default-request-channel="names"/>
-  	
-  	<channel id="names" />
-	<service-activator input-channel="names" ref="helloService" method="greet"/>
+	<channel id="names" />
 	<beans:bean id="helloService" class="com.erj.practice.helloworld.gateway.MyHelloService"/>
+	
+	<gateway id="helloGateway" service-interface="com.erj.practice.helloworld.gateway.HelloService" default-request-channel="names"/>
+  	<service-activator input-channel="names" ref="helloService" method="greet"/>
+	
 </beans:beans>
