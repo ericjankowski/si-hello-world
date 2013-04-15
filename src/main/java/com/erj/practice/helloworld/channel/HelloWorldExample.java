@@ -7,6 +7,7 @@ import org.springframework.integration.MessageChannel;
 import org.springframework.integration.support.MessageBuilder;
 
 public class HelloWorldExample {
+	@SuppressWarnings("resource")
 	public static void main(String[] args){
 		String configFile = "com/erj/practice/helloworld/channel/hello.xml";
 		ApplicationContext context = new ClassPathXmlApplicationContext(configFile);

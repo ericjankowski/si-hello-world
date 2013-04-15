@@ -1,15 +1,15 @@
 <beans:beans
-	xmlns:beans="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns="http://www.springframework.org/schema/integration"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 		http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/integration
 		http://www.springframework.org/schema/integration/spring-integration.xsd"> 
 	
-	<gateway id="helloGateway" service-interface="com.erj.practice.helloworld.gateway.HelloService" default-request-channel="names"/>
-  	
-  	<channel id="names">
-	<service-activator input-channel="names" ref="helloService" method="greet"/>
-	<beans:bean id="helloService" class="com.erj.practice.helloworld.gateway.MyHelloService"/>
+	<channel id="names" />
+	
+	<service-activator input-channel="names" ref="helloService" method="greet" />
+	
+	<beans:bean id="helloService" class="com.erj.practice.helloworld.channel.MyHelloService"/>
 </beans:beans>
