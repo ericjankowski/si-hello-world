@@ -14,6 +14,8 @@ public class MyHelloServiceTest {
 		String result = service.greet("Number One");
 		
 		assertEquals("Hello, Number One", result);
+		
+		System.out.println("small change experiment");
 	}
 
 }
